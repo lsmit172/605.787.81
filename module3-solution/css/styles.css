@@ -1,0 +1,121 @@
+body {
+  font-size: 16px;
+  color: #fff; /* white */
+  background-color: #61122f;
+  margin: 0;
+  padding: 0;
+}
+
+/* drop-down menu button */
+.myButton {
+  clear: right;
+}
+
+#header-nav {
+  background-color: #f6b319;
+  border-radius: 0;
+}
+
+.navbar-brand {
+  margin-left: 10px;
+}
+
+.navbar-collapse {
+  padding: 0;
+  /* remove scrollbar */
+  overflow: hidden;
+}
+
+#sushi-link a:hover {
+  background-color: blue;
+}
+#chicken-link a:hover {
+  background-color: green;
+}
+#beef-link a:hover {
+  background-color: red;
+}
+
+.navbar-toggle icon-bar:mouseleave {
+
+}
+
+.navbar-brand h1 {
+  color: #61122f;
+  font-size: 1.5 em;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .75;
+}
+
+
+
+/* remove underline from link */
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* overwrite container margin */
+.container {
+  margin: 0;
+}
+
+.description {
+  font-family: Helvetica;
+  color: black;
+  overflow: hidden;
+  padding-top: 0; 
+  clear: right;
+  margin-bottom: 20px;
+  margin-top: 0;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: #f6b319;
+  border: 1px solid black;
+}
+
+.category {
+  color: white;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 5px;
+  /* negative margin to negate description padding on category */
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+.sushi {
+  background-color: blue;
+}
+
+.chicken {
+  background-color: green;
+}
+
+.beef {
+  background-color: red;
+}
+
+#nav-list {
+  margin-top: 10px;
+}
+#nav-list a {
+  color: #951C49;
+  text-align: center;
+}
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+  .navbar-brand h1 {
+    padding: 0;
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+}

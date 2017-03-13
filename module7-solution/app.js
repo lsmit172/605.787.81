@@ -85,7 +85,11 @@ function ShoppingListCheckOffService() {
     // save item to move
     var itemToMove = toBuyItems[itemIndex];
 
-    // Allow buying "0", ignore blank entry
+    // Default Blank and negative #'s to 0
+    if ( itemToMove.quantity < 1 ) {
+      itemToMove.quantity = 0;
+    }
+
     if ( itemToMove.quantity >= 0 ) {
       // remove item from toBuyItems
       toBuyItems.splice(itemIndex, 1);

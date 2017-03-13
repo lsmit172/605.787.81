@@ -85,11 +85,14 @@ function ShoppingListCheckOffService() {
     // save item to move
     var itemToMove = toBuyItems[itemIndex];
 
-    // remove item from toBuyItems
-    toBuyItems.splice(itemIndex, 1);
+    // Allow buying "0", ignore blank entry
+    if ( itemToMove.quantity >= 0 ) {
+      // remove item from toBuyItems
+      toBuyItems.splice(itemIndex, 1);
 
-    // push item removed to alreadyBoughtItems
-    alreadyBoughtItems.push(itemToMove);
+      // push item removed to alreadyBoughtItems
+      alreadyBoughtItems.push(itemToMove);
+    }
   }
 }
 

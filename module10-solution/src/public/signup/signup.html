@@ -30,20 +30,17 @@
 
   <input type="text" name="phone" placeholder="Phone ###-###-####" class="signup-input"
     ng-model="signUpCtrl.user.phone"
-    pattern="(\d{3})-(\d{3})-(\d{4})">
+    pattern="(\d{3})-(\d{3})-(\d{4})"
+    required>
     <span class="signup-error" ng-if="regForm.phone.$invalid && regForm.phone.$touched">
       Phone must be in the format ###-###-####.
     </span>
     <br>
 
-  <input type="text" name="shortname" placeholder="Favorite Item" class="signup-input"
+  <input type="text" name="shortname" placeholder="Favorite Item #" class="signup-input"
     ng-blur="signUpCtrl.getItem(signUpCtrl.user.shortname)"
     ng-model="signUpCtrl.user.shortname"
-    pattern="([A-Z]*\d*)"
     required>
-    <span class="signup-error" ng-if="regForm.shortname.$invalid && regForm.shortname.$touched">
-      Short Name should contain at least one capital letter followed by at least 1 number
-    </span>
     <span class="signup-error" ng-if"signUpCtrl.menuNumberMessage">
       {{ signUpCtrl.menuNumberMessage }}
     </span>

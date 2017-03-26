@@ -1,0 +1,62 @@
+<form name='regForm' novalidate>
+
+  <!-- No Length restriction on first and last name -->
+
+  <input type="text" name="firstname" placeholder="First Name" class="signup-input"
+    ng-model="signUpCtrl.user.firstname"
+    pattern="([A-Za-z]*)"
+    required>
+    <span class="signup-error" ng-if="regForm.firstname.$invalid && regForm.firstname.$touched">
+      First name can must contain only 1 or more letters
+    </span>
+    <br>
+
+  <input type="text" name="lastname" placeholder="Last Name" class="signup-input"
+    ng-model="signUpCtrl.user.lastname"
+    pattern="([A-Za-z]*)"
+    required>
+    <span class="signup-error" ng-if="regForm.lastname.$invalid && regForm.lastname.$touched">
+      Last name must contain only 1 or more letters
+    </span>
+    <br>
+
+  <input type="email" name="email" placeholder="Email" class="signup-input"
+    ng-model="signUpCtrl.user.email"
+    required>
+    <span class="signup-error" ng-if="regForm.email.$invalid && regForm.email.$touched">
+      Email format must be a valid address: handle@domain format
+    </span>
+    <br>
+
+  <input type="text" name="phone" placeholder="Phone ###-###-####" class="signup-input"
+    ng-model="signUpCtrl.user.phone"
+    pattern="(\d{3})-(\d{3})-(\d{4})">
+    <span class="signup-error" ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+      Phone must be in the format ###-###-####.
+    </span>
+    <br>
+
+  <input type="text" name="shortname" placeholder="Favorite Item" class="signup-input"
+    ng-blur="signUpCtrl.getItem(signUpCtrl.user.shortname)"
+    ng-model="signUpCtrl.user.shortname"
+    pattern="([A-Z]*\d*)"
+    required>
+    <span class="signup-error" ng-if="regForm.shortname.$invalid && regForm.shortname.$touched">
+      Short Name should contain at least one capital letter followed by at least 1 number
+    </span>
+    <span class="signup-error" ng-if"signUpCtrl.menuNumberMessage">
+      {{ signUpCtrl.menuNumberMessage }}
+    </span>
+
+  <div>
+    <button class="submit" id="signup-button" 
+      ng-disabled="regForm.$invalid"
+      ng-click="signUpCtrl.submit(signUpCtrl.user)">Submit</button>
+  </div>
+
+  <div ng-if="signUpCtrl.message" class="signup-output">
+    {{ signUpCtrl.message }}
+  </div>
+</form>
+
+

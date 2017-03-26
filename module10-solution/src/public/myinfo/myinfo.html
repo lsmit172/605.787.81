@@ -1,0 +1,26 @@
+<div ng-if="myInfoCtrl.user">
+  <div>
+    <span class="userinfo">First Name: {{ myInfoCtrl.user.firstname }}</span>
+  </div>
+  <div>
+    <span class="userinfo">Last Name: {{ myInfoCtrl.user.lastname }}</span>
+  </div>
+  <div>
+    <span class="userinfo">Email: {{ myInfoCtrl.user.email }}</span>
+  </div>
+  <div>
+    <span class="userinfo">Phone: {{ myInfoCtrl.user.phone }}</span>
+  </div>
+  <div class="userinfo">
+    <div>Favorite Item:</div>
+
+    <img class="img-responsive" width="250" height="150" ng-src="https://lsmith-course5.herokuapp.com/images/{{myInfoCtrl.item.short_name}}.jpg" alt="{{myInfoCtrl.item.name}}">
+    <div>Name: {{ myInfoCtrl.item.name}}</div>
+    <div>Details: {{ myInfoCtrl.item.description}}</div>
+  </div>
+</div>
+
+<div ng-if="!myInfoCtrl.user">
+  <span class="userinfo">Not signed up yet.</span>
+  <a ui-sref="public.signup">Sign up Now!</a>
+</div>
